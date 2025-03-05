@@ -1,4 +1,11 @@
 @echo off
+:: Self-launch in hidden mode using PowerShell
+if "%1"=="hidden" goto :main
+
+powershell -WindowStyle Hidden -Command "Start-Process '%~f0' -ArgumentList 'hidden' -WindowStyle Hidden"
+exit /b
+
+:main
 setlocal enabledelayedexpansion
 
 :: Configuration Section
